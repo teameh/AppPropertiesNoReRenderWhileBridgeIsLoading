@@ -16,14 +16,16 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
+type Props = {
+  foo: String
+};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.instructions}>The next line should read "qux", if it reads "bar" the view was not re-rendered after `rootView.appProperties` was changed..</Text>
+        <Text style={styles.welcome}>"{this.props.foo}"</Text>
       </View>
     );
   }
